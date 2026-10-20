@@ -1,0 +1,39 @@
+
+---
+import Navbar from "../components/Navbar.astro";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Andoni Alcelay | Software Engineer",
+  description = "Software engineer building reliable software and tools for complex systems.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#080d17" />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen antialiased">
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+
+    <footer class="border-t border-white/10 px-6 py-8">
+      <div class="mx-auto flex max-w-6xl flex-col gap-3 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <p>© {new Date().getFullYear()} Andoni Alcelay</p>
+        <p>Designed and built with Astro.</p>
+      </div>
+    </footer>
+  </body>
+</html>

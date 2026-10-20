@@ -1,0 +1,43 @@
+
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+
+const projects = [
+  {
+    number: "01",
+    title: "Satellite Data Platform",
+    description: "A software platform for organizing and processing satellite data.",
+    technologies: ["C#", "Angular", "Docker"],
+  },
+  {
+    number: "02",
+    title: "Operations Automation",
+    description: "Tools and scripts for automating repetitive engineering workflows.",
+    technologies: ["Python", "Bash", "Linux"],
+  },
+  {
+    number: "03",
+    title: "Developer Tools",
+    description: "Small utilities and experiments built to solve practical problems.",
+    technologies: ["TypeScript", "APIs", "Git"],
+  },
+];
+
+---
+
+<MainLayout title="Projects | Andoni Alcelay">
+  <section class="mx-auto max-w-6xl px-6 py-24 sm:py-32">
+    <p class="mb-4 font-mono text-xs tracking-widest text-cyan-300">PORTFOLIO</p>
+    <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-6xl">
+      Selected projects.
+    </h1>
+    <p class="mt-6 max-w-2xl leading-8 text-slate-400">
+      A selection of engineering work, software tools and personal experiments.
+    </p>
+
+    <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {projects.map((project) => <ProjectCard {...project} />)}
+    </div>
+  </section>
+</MainLayout>

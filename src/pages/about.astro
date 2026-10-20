@@ -1,0 +1,43 @@
+
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout
+  title="About | Andoni Alcelay"
+  description="Professional background, engineering interests and technologies."
+>
+  <section class="mx-auto max-w-4xl px-6 py-24 sm:py-32">
+    <p class="mb-4 font-mono text-xs tracking-widest text-cyan-300">ABOUT ME</p>
+    <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-6xl">
+      Engineering, software<br />and problem solving.
+    </h1>
+
+    <div class="mt-10 max-w-2xl space-y-6 text-base leading-8 text-slate-400">
+      <p>
+        I'm a software engineer based in Germany, interested in building
+        reliable systems, automating complex workflows and solving
+        engineering problems through software.
+      </p>
+      <p>
+        My experience spans backend development, software tooling,
+        infrastructure and the space sector.
+      </p>
+      <p>
+        I enjoy understanding how systems work, improving existing
+        processes and building practical solutions that make a difference.
+      </p>
+    </div>
+
+    <div class="mt-16 border-t border-white/10 pt-8">
+      <h2 class="mb-6 text-xl font-semibold text-white">Technologies</h2>
+      <div class="flex flex-wrap gap-3">
+        {["C#", ".NET", "Python", "Java", "TypeScript", "Angular", "SQL", "Docker", "Linux", "Bash"].map((tech) => (
+          <span class="rounded-full border border-white/10 px-4 py-2 text-sm text-slate-300">
+            {tech}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+</MainLayout>
